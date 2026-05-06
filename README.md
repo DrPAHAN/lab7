@@ -31,7 +31,7 @@ mkdir -p /usr/local/etc/nginx/geo /usr/local/var/www
 curl -sL https://www.ipdeny.com/ipblocks/data/aggregated/ru-aggregated.zone \
   -o /usr/local/etc/nginx/geo/ru_raw.ip
 
-# Преобразование в формат `IP/CIDR 1;` (для Geo)
+# Преобразование в формат `IP/CIDR 1;` (для geo)
 awk 'NF && !/^#/ {print $1 " 1;"}' /usr/local/etc/nginx/geo/ru_raw.ip \
   > /usr/local/etc/nginx/geo/ru.ip
 ```
